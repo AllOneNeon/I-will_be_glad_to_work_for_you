@@ -1,0 +1,5 @@
+SELECT c.F_NAME, c.L_NAME
+FROM public."EMP" AS c
+INNER JOIN public."SALES" AS o ON (o.ROW_ID = c.ROW_ID_EMP)
+GROUP BY c.F_NAME, c.L_NAME
+ORDER BY SUM(o.AMOUNT) desc
